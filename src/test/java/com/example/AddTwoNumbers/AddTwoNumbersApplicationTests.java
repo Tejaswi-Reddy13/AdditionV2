@@ -2,25 +2,26 @@ package com.example.AddTwoNumbers;
 
 import com.example.AddTwoNumbers.domain.Addition;
 import com.example.AddTwoNumbers.utility.AdditionUtility;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.junit.Assert.assertNotEquals;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@SpringBootTest
-class AddTwoNumbersApplicationTests {
-	AdditionUtility addition = new AdditionUtility();
-	//
-	@Test
-	public void testAdd() {
 
-		assertEquals(7, addition.add(3, 4));
+public class AddTwoNumbersApplicationTests {
+	AdditionUtility addition;
+
+	@BeforeEach
+	public void setUp(){
+		addition = new AdditionUtility();
 	}
-
 	@Test
-	public void testAdd1(){
-		assertNotEquals(7, addition.add(5, 4));
-	}
+	public void testAddPositive() {
 
+		Assertions.assertEquals(7, addition.add(3, 4));
+	}
+	@Test
+	public void testAddNegative(){
+		Assertions.assertNotEquals(7, addition.add(5, 4));
+	}
 }

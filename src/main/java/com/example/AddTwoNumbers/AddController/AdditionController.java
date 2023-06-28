@@ -11,16 +11,11 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class AdditionController
 {
+    AdditionUtility additionUtility;
     @PostMapping("/add")
     @ResponseBody
-    public int addNumbers(@RequestParam("a") int a, @RequestParam("b") int b)
+    public Addition addNumbers(@RequestParam("a") int a, @RequestParam("b") int b)
     {
-//        AdditionResult result = new AdditionResult();
-//        result.setNumber1(addition.getNum1());
-//        result.setNumber2(addition.getNum2());
-//
-//        int addResult = a+b
-//        result.setSum(addResult);
-        return a+b;
+        return new Addition(a, b, additionUtility.add(a, b));
     }
 }
