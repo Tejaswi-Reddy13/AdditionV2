@@ -4,7 +4,7 @@
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>org.example</groupId>
+	<groupId>com.example</groupId>
 	<artifactId>addition-api</artifactId>
 	<version>1.0-SNAPSHOT</version>
 
@@ -12,7 +12,7 @@
 		<maven.compiler.source>11</maven.compiler.source>
 		<maven.compiler.target>11</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<sonar.exclusions>**/MainApp.java, **/AdditionController.java, **/AdditionResponse.java</sonar.exclusions>
+		<sonar.exclusions>**/AddTwoNumbersApplication.java, **/AdditionController.java, **/Addition.java</sonar.exclusions>
 		<sonar.dynamic>reuseReports</sonar.dynamic>
 	</properties>
 
@@ -72,7 +72,7 @@
 				<executions>
 					<execution>
 						<configuration>
-							<mainClass>org.eficens.MainApp</mainClass>
+							<mainClass>com.example.AddTwoNumbers.AddTwoNumbersApplication</mainClass>
 						</configuration>
 					</execution>
 				</executions>
@@ -101,8 +101,8 @@
 				<configuration>
 					<excludes>
 						<exclude>com/example/AddTwoNumbers/AddTwoNumbersApplication*</exclude>
-						<exclude>org/example/AddTwoNumbers/AddController/*</exclude>
-						<exclude>org/example/AddTwoNumbers/model/*</exclude>
+						<exclude>com/example/AddTwoNumbers/AddController/*</exclude>
+						<exclude>com/example/AddTwoNumbers/domain/*</exclude>
 					</excludes>
 				</configuration>
 			</plugin>
